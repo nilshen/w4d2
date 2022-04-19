@@ -55,7 +55,7 @@ PIECES = [Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook]
         end
 
         render_grid.each do |row|
-            puts row.join(' ')
+            puts row.join(" ")
         end
     end
 
