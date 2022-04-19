@@ -5,6 +5,7 @@ require_relative 'bishop'
 require_relative 'queen'
 require_relative 'king'
 require_relative 'pawn'
+require_relative 'null_piece'
 
 class Board
 attr_reader :grid
@@ -13,35 +14,28 @@ PIECES = [Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook]
         @grid = Array.new(8) {Array.new(8)}
         
         PIECES.each_with_index do |piece,i|
-        (0...@grid.length).each do |j|
-            @grid[0][j] = PIECES[i].new('white') if i == j
-        
-        # (0...@grid.length).each do |i|
-        #     (0...@grid.length).each do |j|
-        #         if i == 0 
-        #              PIECES.each do |piece|
-        #                 @grid[i][j] = piece.new('white')
-        #              end
-        #         end
-               
-        #         if i == 1
-        #             8.times do 
-        #                 @grid[i][j] = Pawn.new('white')
-        #             end
-        #         end
+            (0...@grid.length).each do |j|
+                @grid[0][j] = PIECES[i].new(:white) if i == j
+            end
 
-        #         if i == 6
-        #             8.times do 
-        #                 @grid[i][j] = Pawn.new('black')
-        #             end
-        #         end
+            (0...@grid.length).each do |j|
+                @grid[7][j] = PIECES[i].new(:black) if i == j
+            end
+            
+            (0...@grid.length).each do |j|
+                @grid[1][j] = Pawn.new(:white) if i == j
+            end
 
-        #         if i == 7
-        #             PIECES.each do |piece|
-        #                piece.new('black')
-        #             end
-        #        end
+            (0...@grid.length).each do |j|
+                @grid[6][j] = Pawn.new(:black) if i == j
+            end
+        end
 
+        (0...@grid.length).each do |i|
+            (0...@grid.length).each do |j|
+                if i.between?(2,5)
+                    @grid[i][j] = NullPiece.instance
+                end
             end
         end
     end
@@ -53,6 +47,12 @@ PIECES = [Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook]
  
     def []=(pos,value)
         @grid[pos[0]][pos[1]] = value
+    end
+
+    def render
+        @grid.each do |row|
+            puts row.join(' ')
+        end
     end
 
 
