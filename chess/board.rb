@@ -14,21 +14,21 @@ PIECES = [Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook]
         @grid = Array.new(8) {Array.new(8)}
         
         PIECES.each_with_index do |piece,i|
-            (0...@grid.length).each do |j|
-                @grid[0][j] = PIECES[i].new(:white, self, [0,j]) if i == j
-            end
+            # (0...@grid.length).each do |j|
+                @grid[0][i] = PIECES[i].new(:white, self, [0,i]) #if i == j
+            # end
 
-            (0...@grid.length).each do |j|
-                @grid[7][j] = PIECES[i].new(:black, self, [7,j]) if i == j
-            end
+            # (0...@grid.length).each do |j|
+                @grid[7][i] = PIECES[i].new(:black, self, [7,i]) #if i == j
+            # end
             
-            (0...@grid.length).each do |j|
-                @grid[1][j] = Pawn.new(:white, self, [1,j]) if i == j
-            end
+            # (0...@grid.length).each do |j|
+                @grid[1][i] = Pawn.new(:white, self, [1,i]) #if i == j
+            # end
 
-            (0...@grid.length).each do |j|
-                @grid[6][j] = Pawn.new(:black, self, [6,j]) if i == j
-            end
+            # (0...@grid.length).each do |j|
+                @grid[6][i] = Pawn.new(:black, self, [6,i]) #if i == j
+            # end
         end
 
         (0...@grid.length).each do |i|
@@ -55,7 +55,7 @@ PIECES = [Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook]
         end
 
         render_grid.each do |row|
-            print row.join(' ')
+            puts row.join(' ')
         end
     end
 
