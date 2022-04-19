@@ -2,9 +2,16 @@ require_relative 'piece'
 
 class Queen < Piece
 
-    # def initialize(color)
+    attr_reader :sym,:color, :board, :pos
 
-    # end
+    def initialize (color = nil, board = nil, pos = nil)
+        @color = color
+        @board = board
+        @pos = pos
+
+        @sym = :Q if self.color == :white 
+        @sym = :q if self.color == :black 
+    end
 
 
 end

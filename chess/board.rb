@@ -50,8 +50,12 @@ PIECES = [Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook]
     end
 
     def render
-        @grid.each do |row|
-            puts row.join(' ')
+        render_grid = @grid.map do |row|
+            row.map { |el| puts el.sym }
+        end
+
+        render_grid.each do |row|
+            print row.join(' ')
         end
     end
 
