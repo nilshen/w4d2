@@ -15,19 +15,19 @@ PIECES = [Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook]
         
         PIECES.each_with_index do |piece,i|
             (0...@grid.length).each do |j|
-                @grid[0][j] = PIECES[i].new(:white) if i == j
+                @grid[0][j] = PIECES[i].new(:white, self, [0,j]) if i == j
             end
 
             (0...@grid.length).each do |j|
-                @grid[7][j] = PIECES[i].new(:black) if i == j
+                @grid[7][j] = PIECES[i].new(:black, self, [7,j]) if i == j
             end
             
             (0...@grid.length).each do |j|
-                @grid[1][j] = Pawn.new(:white) if i == j
+                @grid[1][j] = Pawn.new(:white, self, [1,j]) if i == j
             end
 
             (0...@grid.length).each do |j|
-                @grid[6][j] = Pawn.new(:black) if i == j
+                @grid[6][j] = Pawn.new(:black, self, [6,j]) if i == j
             end
         end
 
