@@ -10,8 +10,8 @@ attr_reader :sym,:color, :board, :pos
         @board = board
         @pos = pos
 
-        @sym = :P if self.color == :white 
-        @sym = :p if self.color == :black 
+        @sym = :♙ if self.color == :white 
+        @sym = :♟ if self.color == :black 
     end
 
 

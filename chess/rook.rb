@@ -1,6 +1,7 @@
 require_relative 'piece'
 require_relative 'slidable'
 
+
 class Rook < Piece
 
     include Slidable
@@ -12,8 +13,8 @@ class Rook < Piece
         @board = board
         @pos = pos
 
-        @sym = :R if self.color == :white 
-        @sym = :r if self.color == :black 
+        @sym = :♖ if self.color == :white 
+        @sym = :♜ if self.color == :black 
     end
 
     def move_dirs

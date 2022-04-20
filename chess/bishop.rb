@@ -11,8 +11,8 @@ class Bishop < Piece
         @board = board
         @pos = pos
 
-        @sym = :B if self.color == :white 
-        @sym = :b if self.color == :black 
+        @sym = :♗ if self.color == :white 
+        @sym = :♝ if self.color == :black 
     end
 
     def move_dirs

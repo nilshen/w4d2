@@ -12,8 +12,8 @@ class Knight < Piece
         @board = board
         @pos = pos
 
-        @sym = :K if self.color == :white 
-        @sym = :k if self.color == :black 
+        @sym = :♘ if self.color == :white 
+        @sym = :♞ if self.color == :black 
     end
 
     def move_dirs

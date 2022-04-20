@@ -16,27 +16,33 @@ module Slidable
         move_dirs.each do |dx, dy| 
             moves += grow_unblocked_moves_in_dir(dx, dy)
         end
+        moves
     end
-
-
 
     def move_dirs
         raise 'error'
     end
 
-    
-    
-    
     def grow_unblocked_moves_in_dir(dx, dy)
         pos_x, pos_y = pos
         moves = []
-        while valid_pos?(pos)
             pos_x = pos_x + dx
             pos_y = pos_y + dy
-            pos = [pos_x, pos_y]
-            moves << pos
+            while pos_x.between?(0,7) && pos_y.between?(0,7)
+                pos = [pos_x, pos_y]
+                if color != board[pos].color #&& !board[pos].is_a?(NullPiece)
+                    moves << pos 
+                    break
+                end     
+                moves << pos 
+                break if board[pos].color == self.color
         end
         moves
     end
 
 end
+
+# b = Board.new
+# b.move_piece([1,0],[3,3])
+# b.grid[0][0].moves
+# b.render

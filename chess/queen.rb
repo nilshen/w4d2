@@ -10,8 +10,8 @@ class Queen < Piece
         @board = board
         @pos = pos
 
-        @sym = :Q if self.color == :white 
-        @sym = :q if self.color == :black 
+        @sym = :♕ if self.color == :white 
+        @sym = :♛ if self.color == :black 
     end
 
     def move_dirs
