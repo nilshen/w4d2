@@ -54,4 +54,8 @@ PIECES = [Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook]
         @grid[start_pos[0]][start_pos[1]], @grid[end_pos[0]][end_pos[1]] =  @grid[end_pos[0]][end_pos[1]],@grid[start_pos[0]][start_pos[1]]
     end
 
+    def valid_pos?(pos)
+        pos[0].between?(0,7) && pos[1].between?(0,7)
+    end
+
 end
