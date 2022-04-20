@@ -1,7 +1,5 @@
 require_relative 'piece'
 
-
-
 class Pawn < Piece
 attr_reader :sym,:color, :board, :pos
 

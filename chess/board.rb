@@ -58,4 +58,8 @@ PIECES = [Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook]
         pos[0].between?(0,7) && pos[1].between?(0,7)
     end
 
+    def empty?(pos)
+        self[pos].is_a?(NullPiece)
+    end
+
 end
