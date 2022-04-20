@@ -1,10 +1,11 @@
 require_relative 'piece'
-
-
+require_relative 'stepable'
 
 class King < Piece
 
-    attr_reader :sym,:color, :board, :pos
+    include Stepable
+
+    attr_reader :sym, :color, :board, :pos
 
     def initialize (color = nil, board = nil, pos = nil)
         @color = color

@@ -1,6 +1,9 @@
 require_relative 'piece'
+require_relative 'slidable'
 
 class Rook < Piece
+
+    include Slidable
 
     attr_reader :sym, :color, :board, :pos
 
@@ -13,5 +16,8 @@ class Rook < Piece
         @sym = :r if self.color == :black 
     end
 
+    def move_dirs
+        horizontal_dirs
+    end
 
 end
