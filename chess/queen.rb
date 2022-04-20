@@ -1,4 +1,5 @@
 require_relative 'piece'
+require_relative 'slidable'
 
 class Queen < Piece
 
@@ -11,6 +12,10 @@ class Queen < Piece
 
         @sym = :Q if self.color == :white 
         @sym = :q if self.color == :black 
+    end
+
+    def move_dirs
+        horizontal_dirs + diagonal_dirs
     end
 
 

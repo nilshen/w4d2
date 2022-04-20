@@ -16,5 +16,8 @@ class King < Piece
         @sym = :k if self.color == :black 
     end
 
+    def move_dirs
+        [[1,1], [1,-1], [-1,1], [-1,-1], [0,1], [1,0], [-1,0], [0,-1]]
+    end
 
 end

@@ -1,5 +1,5 @@
 require_relative 'piece'
-
+require_relative 'slidable'
 
 
 class Bishop < Piece
@@ -13,7 +13,10 @@ class Bishop < Piece
 
         @sym = :B if self.color == :white 
         @sym = :b if self.color == :black 
+    end
 
+    def move_dirs
+        diagonal_dirs
     end
 
 
