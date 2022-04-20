@@ -7,6 +7,7 @@ require_relative 'king'
 require_relative 'pawn'
 require_relative 'null_piece'
 
+
 class Board
 attr_reader :grid
 PIECES = [Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook]
@@ -62,4 +63,7 @@ PIECES = [Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook]
         self[pos].is_a?(NullPiece)
     end
 
+
 end
+
+

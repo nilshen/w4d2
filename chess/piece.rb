@@ -11,7 +11,9 @@ attr_reader :color, :board, :pos, :sym
         @sym = sym
     end
 
-    
+    # def make_move
+    #     move_piece(pos, board[pos].moves.sample)
+    # end
 
 
 
